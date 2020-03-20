@@ -1,0 +1,5 @@
+parm ../igb8_ff14SB_E4K42/prot1_HMR.parm7
+trajin ../igb8_ff14SB_E4K42/prot1_HMR.rst7
+secstruct SECSTRUCT out secstruct_E4K42_xray.dat
+run
+writedata helicity_E4K42_xray.dat SECSTRUCT[Alpha]

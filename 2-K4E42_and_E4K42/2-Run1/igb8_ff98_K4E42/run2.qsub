@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#PBS -q gpu
+#PBS -l walltime=200:0:0,nodes=1:ppn=1:gpus=1
+#PBS -N igb8_ff98_K4E42
+#PBS -j oe
+#PBS -M eric.lang@bristol.ac.uk
+#PBS -m abe
+#
+module add apps/amber-16
+#
+export MYDIR="/panfs/panasas01/bluegem-t2/el14718/5-Folding/10-K4E42_and_E4K42_folded_2/igb8_ff98_K4E42"
+#
+old=md1
+cd $MYDIR
+for name in md2; do
+$AMBERHOME/bin/pmemd.cuda -O -i $name.i -o prot1_$name.mdout -p prot1_HMR.parm7 -c prot1_$old.rst7 -ref prot1_HMR.rst7 -x prot1_$name.nc -r prot1_$name.rst7 -inf prot1_$name.mdinfo
+old=$name
+done

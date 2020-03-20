@@ -1,0 +1,14 @@
+# 07/13/17 11:07:23
+parm ../igb8_ff14SB_E4K42/prot1_HMR.parm7
+trajin ../igb8_ff14SB_E4K42/prot1_HMR.rst7
+secstruct SECSTRUCT out secstruct_E4K42_xray.dat
+run
+writedata helicity_E4K42_xray.dat SECSTRUCT[Alpha]
+quit
+# 07/13/17 11:07:55
+parm ../igb8_ff14SB_K4E42/prot1_HMR.parm7
+trajin ../igb8_ff14SB_K4E42/prot1_HMR.rst7
+secstruct SECSTRUCT out secstruct_K4E42_xray.dat
+run
+writedata helicity_K4E42_xray.dat SECSTRUCT[Alpha]
+quit

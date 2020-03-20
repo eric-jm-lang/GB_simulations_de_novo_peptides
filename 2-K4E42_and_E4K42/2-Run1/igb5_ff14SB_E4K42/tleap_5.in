@@ -1,0 +1,5 @@
+source leaprc.protein.ff14SB 
+set default PBRadii mbondi2
+prot1 = loadPDB E4K42_capped.pdb
+saveAmberParm prot1 prot1.parm7 prot1.rst7
+quit
