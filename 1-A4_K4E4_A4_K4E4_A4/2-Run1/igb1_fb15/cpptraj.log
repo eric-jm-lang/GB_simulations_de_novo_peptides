@@ -1,0 +1,32 @@
+# 06/06/17 16:16:22
+parm prot1_HMR.parm7
+trajin prot1_md1.nc
+trajin prot1_md2.nc
+reference prot1_HMR.rst7
+center :1-33 mass origin
+rms reference out rmsd_to_ini.dat '(@CA,C,N,O)'
+trajout prot1_md_centered.nc
+trajout prot1_md_centered.pdb onlyframes 1
+secstruct SECSTRUCT out secstruct.dat
+run
+exit
+# 06/06/17 16:43:54
+parm prot1_HMR.parm7
+trajin prot1_md1.nc
+trajin prot1_md2.nc
+reference prot1_HMR.rst7
+center :1-33 mass origin
+rms reference out rmsd_to_ini.dat '(@CA,C,N,O)'
+trajout prot1_md_centered.nc
+trajout prot1_md_centered.pdb onlyframes 1
+secstruct SECSTRUCT out secstruct.dat
+run
+SECSTRUCT[Alpha]
+RMSD_00002
+TEST = SECSTRUCT[Alpha]*100/31
+write TEST out test.dat
+TEST
+ls
+writedata test.dat TEST
+writedata test1.dat SECSTRUCT[Alpha]
+exit

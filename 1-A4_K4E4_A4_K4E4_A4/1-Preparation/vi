@@ -1,0 +1,148 @@
+[?1049h[?1h=[1;77r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[77;1H"prepare_systems_2.sh" 339L, 13225C[1;1H[31m restraintmask='@CA,N,C,O',     ! String that specifies the restrained atoms
+ nmropt=1,                                 ! NMR restraints and weight changes read
+/
+&wt
+  TYPE='TEMP0', ISTEP1=0, ISTEP2=50000,
+  VALUE1=10.0, VALUE2=278.15,
+/
+&wt TYPE='END' /[m[38;5;130m"[m[31m [m[38;5;130m>[m  heat.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD equilibration with restraints over 200 ps
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=50000, dt=0.004,         ! Run MD for 200 ps with a timestep of 4 fs
+ ntpr=250, ntwx=2500,            ! Write the trajectory every 10 ps and the energies every 1 ps
+ ioutfm=1,                                 ! Use Binary NetCDF trajectory format (better)
+ iwrap=0,                                  ! No wrapping will be performed
+ ntxo=2,                                     ! NetCDF rst file
+ ntwr=10000,                               ! Write a restrt file every 10 ps steps, if negative value, the files are not overwritten
+ cut=9999.0,               ! Cut-off electrostatics
+ ntb=0,                    ! no periodicity
+ ntc=2, ntf=2,                         ! SHAKE on all H
+ ntp=0,                                      ! No pressure regulation
+ ntt=3,                                    ! Temperature regulation using langevin dynamics
+ tempi=278.15,
+ temp0=278.15,
+ igb=[m[35m${i}[m[31m,                    ! Implicit solvent
+ saltcon=0.137,         ! Ionic concentration
+ gamma_ln=1.0,                         ! Langevin thermostat collision frequency
+ ig=-1,                                      ! Randomize the seed for the pseudo-random number generator
+ ntr=1,                                      ! Flag for restraining specified atoms
+ restraint_wt=1.0,                   ! The weight (in kcal/molA2) for the positional restraints
+ restraintmask='@CA,N,C,O',     ! String that specifies the restrained atoms
+ nmropt=0,                                 ! NMR restraints and weight changes read
+/[m[38;5;130m"[m[31m [m[38;5;130m>[m  eq1.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD equilibration with restraints over 200 ps
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=50000, dt=0.004,         ! Run MD for 200 ps with a timestep of 4 fs
+ ntpr=250, ntwx=2500,            ! Write the trajectory every 10 ps and the energies every 1 ps
+ ioutfm=1,                                 ! Use Binary NetCDF trajectory format (better)
+ iwrap=0,                                  ! No wrapping will be performed
+ ntxo=2,                                     ! NetCDF rst file
+ ntwr=10000,                               ! Write a restrt file every 10 ps steps, if negative value, the files are not overwritten
+ cut=9999.0,               ! Cut-off electrostatics
+ ntb=0,                    ! no periodicity
+ ntc=2, ntf=2,                         ! SHAKE on all H
+ ntp=0,                                      ! No pressure regulation
+ ntt=3,                                    ! Temperature regulation using langevin dynamics
+ tempi=278.15,
+ temp0=278.15,
+ igb=[m[35m${i}[m[31m,                    ! Implicit solvent
+ saltcon=0.137,         ! Ionic concentration
+ gamma_ln=1.0,                         ! Langevin thermostat collision frequency
+ ig=-1,                                      ! Randomize the seed for the pseudo-random number generator
+ ntr=1,                                      ! Flag for restraining specified atoms
+ restraint_wt=0.1,                   ! The weight (in kcal/molA2) for the positional restraints
+ restraintmask='@CA,N,C,O',     ! String that specifies the restrained atoms
+ nmropt=0,                                 ! NMR restraints and weight changes read
+/[m[38;5;130m"[m[31m [m[38;5;130m>[m  eq2.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD production for 2 us
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=500000000, dt=0.004,     ! Run MD for 2 us with a timestep of 4 fs
+ ntpr=2500, ntwx=25000,                  ! Write the trajectory every 100 ps and the energies every 10 ps
+ ioutfm=1,                                 ! Use Binary NetCDF trajectory format (better)[m[77;265H155,0-1[7C44%[38;1H[?12l[?25h[?25l[77;1HType  :quit<Enter>  to exit Vim[77;32H[K[77;265H155,0-1[7C44%[38;1H[?12l[?25h[?25l[77;265H[K[77;265H155,0-1[7C44%[38;1H[?12l[?25h[?25l[77;267H6,3  [39;3H[?12l[?25h[?25l[77;267H7,1[40;1H[?12l[?25h[?25l[77;267H8,2[41;2H[?12l[?25h[?25l[77;265H[K[77;265H158,2[9C44%[41;2H[?12l[?25h[?25l[77;265H[K[77;265H158,2[9C44%[41;2H[?12l[?25h[?25l[77;265H[K[77;265H158,2[9C44%[41;2H[?12l[?25h[?25l[77;1H[K[77;1H:[?12l[?25hq[?25l[97m[41mE173: 1 more file to edit[m[239C158,2[9C44%[41;2H[?12l[?25h[27m[m[H[2J[?25l[1;1H[31m&wt
+  TYPE='TEMP0', ISTEP1=0, ISTEP2=50000,
+  VALUE1=10.0, VALUE2=278.15,
+/
+&wt TYPE='END' /[m[38;5;130m"[m[31m [m[38;5;130m>[m  heat.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD equilibration with restraints over 200 ps
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=50000, dt=0.004,         ! Run MD for 200 ps with a timestep of 4 fs
+ ntpr=250, ntwx=2500,            ! Write the trajectory every 10 ps and the energies every 1 ps
+ ioutfm=1,                                 ! Use Binary NetCDF trajectory format (better)
+ iwrap=0,                                  ! No wrapping will be performed
+ ntxo=2,                                     ! NetCDF rst file
+ ntwr=10000,                               ! Write a restrt file every 10 ps steps, if negative value, the files are not overwritten
+ cut=9999.0,               ! Cut-off electrostatics
+ ntb=0,                    ! no periodicity
+ ntc=2, ntf=2,                         ! SHAKE on all H
+ ntp=0,                                      ! No pressure regulation
+ ntt=3,                                    ! Temperature regulation using langevin dynamics
+ tempi=278.15,
+ temp0=278.15,
+ igb=[m[35m${i}[m[31m,                    ! Implicit solvent
+ saltcon=0.137,         ! Ionic concentration
+ gamma_ln=1.0,                         ! Langevin thermostat collision frequency
+ ig=-1,                                      ! Randomize the seed for the pseudo-random number generator
+ ntr=1,                                      ! Flag for restraining specified atoms
+ restraint_wt=1.0,                   ! The weight (in kcal/molA2) for the positional restraints
+ restraintmask='@CA,N,C,O',     ! String that specifies the restrained atoms
+ nmropt=0,                                 ! NMR restraints and weight changes read
+/[m[38;5;130m"[m[31m [m[38;5;130m>[m  eq1.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD equilibration with restraints over 200 ps
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=50000, dt=0.004,         ! Run MD for 200 ps with a timestep of 4 fs
+ ntpr=250, ntwx=2500,            ! Write the trajectory every 10 ps and the energies every 1 ps
+ ioutfm=1,                                 ! Use Binary NetCDF trajectory format (better)
+ iwrap=0,                                  ! No wrapping will be performed
+ ntxo=2,                                     ! NetCDF rst file
+ ntwr=10000,                               ! Write a restrt file every 10 ps steps, if negative value, the files are not overwritten
+ cut=9999.0,               ! Cut-off electrostatics
+ ntb=0,                    ! no periodicity
+ ntc=2, ntf=2,                         ! SHAKE on all H
+ ntp=0,                                      ! No pressure regulation
+ ntt=3,                                    ! Temperature regulation using langevin dynamics
+ tempi=278.15,
+ temp0=278.15,
+ igb=[m[35m${i}[m[31m,                    ! Implicit solvent
+ saltcon=0.137,         ! Ionic concentration
+ gamma_ln=1.0,                         ! Langevin thermostat collision frequency
+ ig=-1,                                      ! Randomize the seed for the pseudo-random number generator
+ ntr=1,                                      ! Flag for restraining specified atoms
+ restraint_wt=0.1,                   ! The weight (in kcal/molA2) for the positional restraints
+ restraintmask='@CA,N,C,O',     ! String that specifies the restrained atoms
+ nmropt=0,                                 ! NMR restraints and weight changes read
+/[m[38;5;130m"[m[31m [m[38;5;130m>[m  eq2.i
+
+  [38;5;130mecho[m[31m [m[38;5;130m"[m[31mMD production for 2 us
+&cntrl
+ imin=0,                                   ! Not a minimisation run
+ irest=1,                                  ! Restart simulation
+ ntx=5,                                      ! Read coordinates and velocities from coordinate file
+ nscm=1000,                                ! Reset COM every 1000 steps
+ nstlim=500000000, dt=0.004,     ! Run MD for 2 us with a timestep of 4 fs[m[72;124H158,2[9C44%[38;2H[?12l[?25h[72;1H[?1l>[?1049lVim: Error reading input, exiting...
+Vim: Finished.
+[72;1H[J2 files to edit

@@ -1,0 +1,9 @@
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =    12.15  PRESS =     0.0
+ Etot   =      -678.2139  EKtot   =        13.9524  EPtot      =      -692.1663
+ BOND   =        13.3810  ANGLE   =        32.2868  DIHED      =       320.1013
+ 1-4 NB =        80.2668  1-4 EEL =      2471.3957  VDWAALS    =      -182.4830
+ EELEC  =     -2645.9429  EGB     =      -952.7732  RESTRAINT  =       171.6011
+ EAMBER (non-restraint)  =      -863.7674
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================

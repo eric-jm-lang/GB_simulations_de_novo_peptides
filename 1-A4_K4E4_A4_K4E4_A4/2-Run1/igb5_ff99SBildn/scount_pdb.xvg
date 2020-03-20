@@ -1,0 +1,29 @@
+# This file was created Thu Mar  2 18:50:50 2017
+# Created by:
+#                  :-) GROMACS - gmx do_dssp, VERSION 5.1.2 (-:
+# 
+# Executable:   /cm/shared/apps/Gromacs-5.1.2/install/bin/gmx
+# Data prefix:  /cm/shared/apps/Gromacs-5.1.2/install
+# Command line:
+#   gmx do_dssp -f prot1.pdb -s prot1.pdb -sc scount_pdb.xvg
+# gmx do_dssp is part of G R O M A C S:
+#
+# Guyana Rwanda Oman Macau Angola Cameroon Senegal
+#
+@    title "Secondary Structure"
+@    xaxis  label "Time (ps)"
+@    yaxis  label "Number of Residues"
+@TYPE xy
+@ subtitle "Structure = A-Helix +  +  + "
+@ view 0.15, 0.15, 0.75, 0.85
+@ legend on
+@ legend box on
+@ legend loctype view
+@ legend 0.78, 0.8
+@ legend length 2
+@ s0 legend "Structure"
+@ s1 legend "Coil"
+@ s2 legend "A-Helix"
+      -1    29     2    29
+# Totals    29     2    29
+# SS %    0.94  0.06  0.94
