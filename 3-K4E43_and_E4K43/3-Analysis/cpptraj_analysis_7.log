@@ -1,0 +1,2972 @@
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 14:09:12
+| Available memory: 86.580 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 85.7484 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 699.7212 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7238 s (  0.10%)
+TIME:		Other              : 0.0006 s (  0.00%)
+TIME:	Run Total 700.4457 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 700.7343 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff14SB_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 14:20:52
+| Available memory: 86.513 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 88.8976 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 674.9341 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7244 s (  0.11%)
+TIME:		Other              : 0.0010 s (  0.00%)
+TIME:	Run Total 675.6596 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 675.9261 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff14SB_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 14:32:08
+| Available memory: 86.474 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 90.6106 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 662.1742 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.6680 s (  0.10%)
+TIME:		Other              : 0.0012 s (  0.00%)
+TIME:	Run Total 662.8435 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 663.1323 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff03.r1_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 14:43:11
+| Available memory: 86.550 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 92.7048 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 647.2160 s ( 99.88%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7559 s (  0.12%)
+TIME:		Other              : 0.0007 s (  0.00%)
+TIME:	Run Total 647.9728 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 648.2784 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff03.r1_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 14:54:00
+| Available memory: 86.526 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 81.1735 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 739.1574 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7305 s (  0.10%)
+TIME:		Other              : 0.0005 s (  0.00%)
+TIME:	Run Total 739.8885 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 740.4079 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 15:06:20
+| Available memory: 86.416 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 90.4933 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 663.0324 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7568 s (  0.11%)
+TIME:		Other              : 0.0006 s (  0.00%)
+TIME:	Run Total 663.7899 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 664.0984 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 15:17:24
+| Available memory: 86.489 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 76.6236 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 783.0481 s ( 99.91%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.6778 s (  0.09%)
+TIME:		Other              : 0.0012 s (  0.00%)
+TIME:	Run Total 783.7272 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 784.0452 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SB_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 15:30:29
+| Available memory: 86.386 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 94.5936 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 634.2922 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7153 s (  0.11%)
+TIME:		Other              : 0.0006 s (  0.00%)
+TIME:	Run Total 635.0082 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 635.2802 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SB_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 15:41:04
+| Available memory: 86.432 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 84.0911 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 713.5123 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.6953 s (  0.10%)
+TIME:		Other              : 0.0009 s (  0.00%)
+TIME:	Run Total 714.2085 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 714.4886 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SBildn_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 15:52:58
+| Available memory: 86.409 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 90.1005 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 665.9233 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7358 s (  0.11%)
+TIME:		Other              : 0.0013 s (  0.00%)
+TIME:	Run Total 666.6605 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 666.9479 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SBildn_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:04:05
+| Available memory: 86.414 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 84.2722 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 711.9787 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7366 s (  0.10%)
+TIME:		Other              : 0.0007 s (  0.00%)
+TIME:	Run Total 712.7161 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 713.0151 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SBnmr_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:15:58
+| Available memory: 86.304 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 93.4167 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 642.2831 s ( 99.88%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.7399 s (  0.12%)
+TIME:		Other              : 0.0011 s (  0.00%)
+TIME:	Run Total 643.0242 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 643.3158 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff99SBnmr_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:26:42
+| Available memory: 86.386 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 
+----- prot1_md2.nc (1-40000, 1) -----
+40% 50% 60% 70% 80% 90% 100% Complete.
+
+Read 60000 frames and processed 60000 frames.
+TIME: Avg. throughput= 85.8137 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 60000
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 60000
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 60000
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 60000
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 60000
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 60000
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 60000
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 60000
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 60000
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 60000
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 60000
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 60000
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 60000
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 60000
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 60000
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 60000
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 60000
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 60000
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 60000
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 60000
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 60000
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 60000
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 60000
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 60000
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 60000
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 60000
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 60000
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 60000
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 60000
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 60000
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 60000
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 60000
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 60000
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 60000
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 60000
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 60000
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 60000
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 60000
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 699.1888 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.6917 s (  0.10%)
+TIME:		Other              : 0.0006 s (  0.00%)
+TIME:	Run Total 699.8813 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 700.3310 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff96_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:38:22
+| Available memory: 86.376 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 10800 of 10800)
+  Coordinate processing will occur on 30800 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (30800 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (30800 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 
+----- prot1_md2.nc (1-10800, 1) -----
+70% 80% 90% 100% Complete.
+
+Read 30800 frames and processed 30800 frames.
+TIME: Avg. throughput= 100.8971 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 30800
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 30800
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 30800
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 30800
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 30800
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 30800
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 30800
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 30800
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 30800
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 30800
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 30800
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 30800
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 30800
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 30800
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 30800
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 30800
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 30800
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 30800
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 30800
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 30800
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 30800
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 30800
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 30800
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 30800
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 30800
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 30800
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 30800
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 30800
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 30800
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 30800
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 30800
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 30800
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 30800
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 30800
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 30800
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 30800
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 30800
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 30800
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 305.2614 s ( 99.88%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.3710 s (  0.12%)
+TIME:		Other              : 0.0006 s (  0.00%)
+TIME:	Run Total 305.6332 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 305.8781 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff96_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:43:28
+| Available memory: 86.263 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 999 of 999)
+  Coordinate processing will occur on 20999 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (20999 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (20999 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 
+----- prot1_md2.nc (1-999, 1) -----
+100% Complete.
+
+Read 20999 frames and processed 20999 frames.
+TIME: Avg. throughput= 86.6179 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 20999
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 20999
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 20999
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 20999
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 20999
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 20999
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 20999
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 20999
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 20999
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 20999
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 20999
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 20999
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 20999
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 20999
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 20999
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 20999
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 20999
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 20999
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 20999
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 20999
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 20999
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 20999
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 20999
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 20999
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 20999
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 20999
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 20999
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 20999
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 20999
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 20999
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 20999
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 20999
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 20999
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 20999
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 20999
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 20999
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 20999
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 20999
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 242.4325 s ( 99.91%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.2137 s (  0.09%)
+TIME:		Other              : 0.0005 s (  0.00%)
+TIME:	Run Total 242.6468 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 242.8394 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff94_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:47:31
+| Available memory: 86.455 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 999 of 999)
+  Coordinate processing will occur on 20999 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (20999 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (20999 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 
+----- prot1_md2.nc (1-999, 1) -----
+100% Complete.
+
+Read 20999 frames and processed 20999 frames.
+TIME: Avg. throughput= 95.7063 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 20999
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 20999
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 20999
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 20999
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 20999
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 20999
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 20999
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 20999
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 20999
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 20999
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 20999
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 20999
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 20999
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 20999
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 20999
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 20999
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 20999
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 20999
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 20999
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 20999
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 20999
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 20999
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 20999
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 20999
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 20999
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 20999
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 20999
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 20999
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 20999
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 20999
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 20999
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 20999
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 20999
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 20999
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 20999
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 20999
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 20999
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 20999
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 219.4109 s ( 99.90%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.2194 s (  0.10%)
+TIME:		Other              : 0.0007 s (  0.00%)
+TIME:	Run Total 219.6311 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 219.8914 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff94_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:51:11
+| Available memory: 86.360 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 999 of 999)
+  Coordinate processing will occur on 20999 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (20999 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (20999 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 361 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 
+----- prot1_md2.nc (1-999, 1) -----
+100% Complete.
+
+Read 20999 frames and processed 20999 frames.
+TIME: Avg. throughput= 86.9021 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 20999
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 20999
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 20999
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 20999
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 20999
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 20999
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 20999
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 20999
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 20999
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 20999
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 20999
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 20999
+	SECSTRUCT[res]:4 "GLU:4" (integer), size is 20999
+	SECSTRUCT[res]:5 "GLU:5" (integer), size is 20999
+	SECSTRUCT[res]:6 "GLU:6" (integer), size is 20999
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 20999
+	SECSTRUCT[res]:8 "LYS:8" (integer), size is 20999
+	SECSTRUCT[res]:9 "LYS:9" (integer), size is 20999
+	SECSTRUCT[res]:10 "LYS:10" (integer), size is 20999
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 20999
+	SECSTRUCT[res]:12 "GLU:12" (integer), size is 20999
+	SECSTRUCT[res]:13 "GLU:13" (integer), size is 20999
+	SECSTRUCT[res]:14 "GLU:14" (integer), size is 20999
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 20999
+	SECSTRUCT[res]:16 "LYS:16" (integer), size is 20999
+	SECSTRUCT[res]:17 "LYS:17" (integer), size is 20999
+	SECSTRUCT[res]:18 "LYS:18" (integer), size is 20999
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 20999
+	SECSTRUCT[res]:20 "GLU:20" (integer), size is 20999
+	SECSTRUCT[res]:21 "GLU:21" (integer), size is 20999
+	SECSTRUCT[res]:22 "GLU:22" (integer), size is 20999
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 20999
+	SECSTRUCT[res]:24 "LYS:24" (integer), size is 20999
+	SECSTRUCT[res]:25 "LYS:25" (integer), size is 20999
+	SECSTRUCT[res]:26 "LYS:26" (integer), size is 20999
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 20999
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 20999
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 20999
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 GLU:4 ... LYS:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 241.6396 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.2705 s (  0.11%)
+TIME:		Other              : 0.0007 s (  0.00%)
+TIME:	Run Total 241.9110 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 242.1368 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff14ipq_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:55:13
+| Available memory: 86.172 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 491 atoms, 29 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 999 of 999)
+  Coordinate processing will occur on 20999 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (20999 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (20999 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 375 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](111)
+	Reference mask: [(@CA,C,N,O)](111)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:29
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 29 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 
+----- prot1_md2.nc (1-999, 1) -----
+100% Complete.
+
+Read 20999 frames and processed 20999 frames.
+TIME: Avg. throughput= 96.5254 frames / second.
+
+ACTION OUTPUT:
+
+DATASETS (45 total):
+	RMSD_00002 "RMSD_00002" (double, rms), size is 20999
+	SECSTRUCT[None] "SECSTRUCT[None]" (float), size is 20999
+	SECSTRUCT[Para] "SECSTRUCT[Para]" (float), size is 20999
+	SECSTRUCT[Anti] "SECSTRUCT[Anti]" (float), size is 20999
+	SECSTRUCT[3-10] "SECSTRUCT[3-10]" (float), size is 20999
+	SECSTRUCT[Alpha] "SECSTRUCT[Alpha]" (float), size is 20999
+	SECSTRUCT[Pi] "SECSTRUCT[Pi]" (float), size is 20999
+	SECSTRUCT[Turn] "SECSTRUCT[Turn]" (float), size is 20999
+	SECSTRUCT[Bend] "SECSTRUCT[Bend]" (float), size is 20999
+	SECSTRUCT[res]:1 "ACE:1" (integer), size is 20999
+	SECSTRUCT[res]:2 "GLY:2" (integer), size is 20999
+	SECSTRUCT[res]:3 "LYS:3" (integer), size is 20999
+	SECSTRUCT[res]:4 "LYS:4" (integer), size is 20999
+	SECSTRUCT[res]:5 "LYS:5" (integer), size is 20999
+	SECSTRUCT[res]:6 "LYS:6" (integer), size is 20999
+	SECSTRUCT[res]:7 "GLU:7" (integer), size is 20999
+	SECSTRUCT[res]:8 "GLU:8" (integer), size is 20999
+	SECSTRUCT[res]:9 "GLU:9" (integer), size is 20999
+	SECSTRUCT[res]:10 "GLU:10" (integer), size is 20999
+	SECSTRUCT[res]:11 "LYS:11" (integer), size is 20999
+	SECSTRUCT[res]:12 "LYS:12" (integer), size is 20999
+	SECSTRUCT[res]:13 "LYS:13" (integer), size is 20999
+	SECSTRUCT[res]:14 "LYS:14" (integer), size is 20999
+	SECSTRUCT[res]:15 "GLU:15" (integer), size is 20999
+	SECSTRUCT[res]:16 "GLU:16" (integer), size is 20999
+	SECSTRUCT[res]:17 "GLU:17" (integer), size is 20999
+	SECSTRUCT[res]:18 "GLU:18" (integer), size is 20999
+	SECSTRUCT[res]:19 "LYS:19" (integer), size is 20999
+	SECSTRUCT[res]:20 "LYS:20" (integer), size is 20999
+	SECSTRUCT[res]:21 "LYS:21" (integer), size is 20999
+	SECSTRUCT[res]:22 "LYS:22" (integer), size is 20999
+	SECSTRUCT[res]:23 "GLU:23" (integer), size is 20999
+	SECSTRUCT[res]:24 "GLU:24" (integer), size is 20999
+	SECSTRUCT[res]:25 "GLU:25" (integer), size is 20999
+	SECSTRUCT[res]:26 "GLU:26" (integer), size is 20999
+	SECSTRUCT[res]:27 "GLY:27" (integer), size is 20999
+	SECSTRUCT[res]:28 "TRP:28" (integer), size is 20999
+	SECSTRUCT[res]:29 "NHE:29" (integer), size is 20999
+	SECSTRUCT[avgss]:1 "Para" (double), size is 29
+	SECSTRUCT[avgss]:2 "Anti" (double), size is 29
+	SECSTRUCT[avgss]:3 "3-10" (double), size is 29
+	SECSTRUCT[avgss]:4 "Alpha" (double), size is 29
+	SECSTRUCT[avgss]:5 "Pi" (double), size is 29
+	SECSTRUCT[avgss]:6 "Turn" (double), size is 29
+	SECSTRUCT[avgss]:7 "Bend" (double), size is 29
+
+DATAFILES (3 total):
+  rmsd_to_ini.dat (Standard Data File):  RMSD_00002
+  secstruct.dat (Standard Data File):  ACE:1 GLY:2 LYS:3 LYS:4 ... GLU:26 GLY:27 TRP:28 NHE:29
+  secstruct.dat.sum (Standard Data File):  Para Anti 3-10 Alpha Pi Turn Bend
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.00%)
+TIME:		Trajectory Process : 217.5490 s ( 99.89%)
+TIME:		Action Post        : 0.0001 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.2363 s (  0.11%)
+TIME:		Other              : 0.0005 s (  0.00%)
+TIME:	Run Total 217.7859 s
+---------- RUN END ---------------------------------------------------
+  [writedata helicity.dat SECSTRUCT[Alpha]]
+	Writing sets to helicity.dat, format 'Standard Data File'
+ SECSTRUCT[Alpha]
+TIME: Total execution time: 217.9828 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+igb7_ff14ipq_K4E43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:58:51
+| Available memory: 86.445 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+TIME: Total execution time: 0.1164 seconds.
+
+igb7_ff98_E4K43 done
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 01/18/21 16:58:51
+| Available memory: 86.446 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+TIME: Total execution time: 0.0893 seconds.
+
+igb7_ff98_K4E43 done

@@ -2,7 +2,7 @@
 #
 #SBATCH -p serial
 #SBATCH -J ana2_7
-#SBATCH --time=02:00:00     # Walltime
+#SBATCH --time=06:00:00     # Walltime
 #SBATCH --mail-user=eric.lang@bristol.ac.uk
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1          # number of tasks
