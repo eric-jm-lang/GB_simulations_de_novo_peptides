@@ -14,6 +14,6 @@ source /mnt/storage/scratch/el14718/SOFTWARE/amber16-mofified/amber16/amber.sh
 #
 cd $SLURM_SUBMIT_DIR
 #
-bash cpptraj_analysis_7.sh > cpptraj_analysis_7.log
+bash cpptraj_analysis_7_2.sh > cpptraj_analysis_7_2.log
  
 
