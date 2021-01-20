@@ -1,0 +1,22 @@
+# Trajectory files
+*.nc
+*.mdout
+*.mdinfo
+*.bck
+\#*\#
+*.xtc
+*.trr
+*.dcd
+*.OLD
+*.old
+*.bck
+slurm-*
+*-checkpoint.ipynb
+*.pyc
+*.pickle
+*.mpg
+*.mpeg
+*.mp4
+*.ppm
+*.svg
+
