@@ -1,6 +1,6 @@
 parm prot1_HMR.parm7
 trajin prot1_md1.nc
-trajin prot1_md2.nc
+#trajin prot1_md2.nc
 reference prot1_HMR.rst7
 center :1-33 mass origin
 rms reference out rmsd_to_ini.dat '(@CA,C,N,O)'
