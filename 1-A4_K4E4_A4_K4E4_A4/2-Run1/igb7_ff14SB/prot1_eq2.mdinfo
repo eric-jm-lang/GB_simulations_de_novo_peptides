@@ -1,23 +1,23 @@
 
- NSTEP =      250   TIME(PS) =     401.000  TEMP(K) =   279.83  PRESS =     0.0
- Etot   =      -127.7871  EKtot   =       321.4164  EPtot      =      -449.2035
- BOND   =       105.3586  ANGLE   =       214.4290  DIHED      =       351.1823
- 1-4 NB =        87.5327  1-4 EEL =      2491.0061  VDWAALS    =      -164.6262
- EELEC  =     -2693.7221  EGB     =      -844.5753  RESTRAINT  =         4.2115
- EAMBER (non-restraint)  =      -453.4150
+ NSTEP =      250   TIME(PS) =     401.000  TEMP(K) =   281.45  PRESS =     0.0
+ Etot   =      -163.5327  EKtot   =       323.2711  EPtot      =      -486.8038
+ BOND   =       107.9493  ANGLE   =       214.4679  DIHED      =       364.0563
+ 1-4 NB =        92.0885  1-4 EEL =      2459.9750  VDWAALS    =      -163.6745
+ EELEC  =     -2545.4903  EGB     =     -1020.6213  RESTRAINT  =         4.4454
+ EAMBER (non-restraint)  =      -491.2492
  ------------------------------------------------------------------------------
 | Current Timing Info
 | -------------------
 | Total steps :     50000 | Completed :       250 | Remaining :     49750
 |
 | Average timings for last     250 steps:
-|     Elapsed(s) =       0.06 Per Step(ms) =       0.24
-|         ns/day =    1427.04   seconds/ns =      60.54
+|     Elapsed(s) =       0.19 Per Step(ms) =       0.75
+|         ns/day =     462.15   seconds/ns =     186.95
 |
 | Average timings for all steps:
-|     Elapsed(s) =       0.06 Per Step(ms) =       0.24
-|         ns/day =    1427.04   seconds/ns =      60.54
+|     Elapsed(s) =       0.19 Per Step(ms) =       0.75
+|         ns/day =     462.15   seconds/ns =     186.95
 |
 |
-| Estimated time remaining:      12.0 seconds.
+| Estimated time remaining:      37.2 seconds.
  ------------------------------------------------------------------------------

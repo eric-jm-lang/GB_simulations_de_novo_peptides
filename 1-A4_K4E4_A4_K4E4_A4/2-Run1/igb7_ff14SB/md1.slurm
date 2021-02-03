@@ -15,8 +15,8 @@ source /mnt/storage/scratch/el14718/SOFTWARE/amber16-mofified/amber16/amber.sh
 #
 cd $SLURM_SUBMIT_DIR
 #
-old=md1
-for name in md2; do
+old=HMR
+for name in min1 min2 heat eq1 eq2 md1 md2; do
 $AMBERHOME/bin/pmemd.cuda -O -i $name.i -o prot1_$name.mdout -p prot1_HMR.parm7 -c prot1_$old.rst7 -ref prot1_HMR.rst7 -x prot1_$name.nc -r prot1_$name.rst7 -inf prot1_$name.mdinfo
 old=$name
 done

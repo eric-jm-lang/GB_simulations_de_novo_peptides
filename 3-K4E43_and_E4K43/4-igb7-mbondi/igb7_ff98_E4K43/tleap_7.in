@@ -1,0 +1,5 @@
+source oldff/leaprc.ff98 
+set default PBRadii mbondi
+prot1 = loadPDB E4K43_capped.pdb
+saveAmberParm prot1 prot1.parm7 prot1.rst7
+quit

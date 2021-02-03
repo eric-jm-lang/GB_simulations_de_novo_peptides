@@ -1,4 +1,4 @@
-log started: Fri Sep 20 16:10:01 2019
+log started: Thu Jan 21 16:00:14 2021
 
 Log file: ./leap.log
 >> #
@@ -259,8 +259,8 @@ Loading: NVAL
 >> HIS = HIE
 >> CHIS = CHIE
 > 
-> set default PBRadii mbondi
-Using modified Bondi radii
+> set default PBRadii bondi
+Using Bondi radii
 > prot1 = loadPDB K4E42_capped.pdb
 Loading PDB file: ./K4E42_capped.pdb
 Enter zPdbReadScan from call depth  0.

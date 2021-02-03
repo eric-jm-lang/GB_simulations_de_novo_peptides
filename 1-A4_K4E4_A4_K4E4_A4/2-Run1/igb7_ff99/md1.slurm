@@ -2,7 +2,7 @@
 #
 #SBATCH -p gpu
 #SBATCH -J 7_ff99
-#SBATCH --time=96:00:00     # Walltime
+#SBATCH --time=6-00:00:00     # Walltime
 #SBATCH --mail-user=eric.lang@bristol.ac.uk
 #SBATCH --mail-type=ALL
 #SBATCH --nodes=1          # number of tasks

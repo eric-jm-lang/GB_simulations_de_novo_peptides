@@ -1,5 +1,5 @@
 source leaprc.protein.ff03.r1 
-set default PBRadii mbondi
+set default PBRadii bondi
 prot1 = loadPDB E4K43_capped.pdb
 saveAmberParm prot1 prot1.parm7 prot1.rst7
 quit
