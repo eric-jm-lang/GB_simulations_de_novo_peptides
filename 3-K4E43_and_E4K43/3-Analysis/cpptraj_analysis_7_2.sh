@@ -1,9 +1,8 @@
 #!/bin/bash
 
 for i in 7; do
-  for j in ff15ipq fb15; do 
-  # for j in ff14SB; do
-	for k in E4K43 K4E43; do
+  for j in ff14SB; do 
+	for k in E4K43; do
   
   cd ../2-Run1/igb${i}_${j}_${k}
   rm *.dat

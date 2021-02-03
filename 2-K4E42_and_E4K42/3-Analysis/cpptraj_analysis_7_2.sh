@@ -1,10 +1,9 @@
 #!/bin/bash
 
 for i in 7; do
-  for j in ff15ipq fb15; do 
-  # for j in ff14SB; do
-	for k in E4K42 K4E42; do
-  
+  for j in ff94 ff96; do 
+	#for k in E4K42 K4E42; do
+  	for k in E4K42; do
   cd ../2-Run1/igb${i}_${j}_${k}
   rm *.dat
   cat > traj.in <<EOF
