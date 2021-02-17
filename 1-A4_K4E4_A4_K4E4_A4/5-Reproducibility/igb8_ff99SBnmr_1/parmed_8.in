@@ -1,0 +1,4 @@
+parm prot1.parm7
+HMassRepartition
+outparm prot1_HMR.parm7
+quit
