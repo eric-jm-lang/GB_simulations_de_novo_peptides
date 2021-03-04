@@ -1,25 +1,25 @@
 
- NSTEP =    39250   TIME(PS) =     157.000  TEMP(K) =*********  PRESS =     0.0
- Etot   = **************  EKtot   = **************  EPtot      = **************
- BOND   = **************  ANGLE   =     67462.9330  DIHED      =       953.0917
- 1-4 NB =         0.0000  1-4 EEL =         1.5243  VDWAALS    =        -0.0000
- EELEC  =        88.0531  EGB     =     -5398.0374  RESTRAINT  = **************
- EAMBER (non-restraint)  = **************
+ NSTEP =    39750   TIME(PS) =     159.000  TEMP(K) =   228.06  PRESS =     0.0
+ Etot   =      -595.6889  EKtot   =       193.9704  EPtot      =      -789.6593
+ BOND   =        62.5678  ANGLE   =       126.5659  DIHED      =        91.3298
+ 1-4 NB =        60.8667  1-4 EEL =      1626.8952  VDWAALS    =      -111.2046
+ EELEC  =     -1786.2001  EGB     =      -873.8030  RESTRAINT  =        13.3228
+ EAMBER (non-restraint)  =      -802.9821
  NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
 ===============================================================================
  ------------------------------------------------------------------------------
 | Current Timing Info
 | -------------------
-| Total steps :     50000 | Completed :     39250 | Remaining :     10750
+| Total steps :     50000 | Completed :     39750 | Remaining :     10250
 |
-| Average timings for last   39250 steps:
-|     Elapsed(s) =      59.71 Per Step(ms) =       1.52
-|         ns/day =     227.18   seconds/ns =     380.31
+| Average timings for last   39750 steps:
+|     Elapsed(s) =      59.29 Per Step(ms) =       1.49
+|         ns/day =     231.69   seconds/ns =     372.92
 |
 | Average timings for all steps:
-|     Elapsed(s) =      59.71 Per Step(ms) =       1.52
-|         ns/day =     227.18   seconds/ns =     380.31
+|     Elapsed(s) =      59.29 Per Step(ms) =       1.49
+|         ns/day =     231.69   seconds/ns =     372.92
 |
 |
-| Estimated time remaining:      16.4 seconds.
+| Estimated time remaining:      15.3 seconds.
  ------------------------------------------------------------------------------
