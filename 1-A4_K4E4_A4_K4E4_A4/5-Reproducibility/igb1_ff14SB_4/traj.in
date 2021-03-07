@@ -1,0 +1,11 @@
+parm prot1_HMR.parm7
+trajin prot1_md_centered.nc
+secstruct SECSTRUCT out secstruct.dat
+run
+writedata anti.dat SECSTRUCT[Anti]
+writedata para.dat SECSTRUCT[Para]
+writedata 310.dat SECSTRUCT[3-10]
+writedata pi.dat SECSTRUCT[Pi]
+writedata turn.dat SECSTRUCT[Turn]
+writedata bend.dat SECSTRUCT[Bend]
+
