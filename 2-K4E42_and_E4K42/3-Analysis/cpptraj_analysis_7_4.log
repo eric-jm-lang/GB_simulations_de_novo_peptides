@@ -1,0 +1,83 @@
+
+CPPTRAJ: Trajectory Analysis. V17.00
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 04/28/21 11:45:40
+| Available memory: 111.008 GB
+
+INPUT: Reading input from 'STDIN'
+  [parm prot1_HMR.parm7]
+	Reading 'prot1_HMR.parm7' as Amber Topology
+	Radius Set: Bondi radii (bondi)
+  [trajin prot1_md1.nc]
+	Reading 'prot1_md1.nc' as Amber NetCDF
+  [trajin prot1_md2.nc]
+	Reading 'prot1_md2.nc' as Amber NetCDF
+  [reference prot1_HMR.rst7]
+	Reading 'prot1_HMR.rst7' as Amber Restart
+	Setting active reference for distance-based masks: 'prot1_HMR.rst7'
+  [center :1-21 mass origin]
+    CENTER: Centering coordinates using center of mass of atoms in mask (:1-21) to
+	coordinate origin.
+  [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+    RMSD: ((@CA,C,N,O)), reference is "default_name" ((@CA,C,N,O)).
+	Best-fit RMSD will be calculated, coords will be rotated and translated.
+  [trajout prot1_md_centered.nc]
+	Writing 'prot1_md_centered.nc' as Amber NetCDF
+  [trajout prot1_md_centered.pdb onlyframes 1]
+	Saving frames 1
+	Writing 'prot1_md_centered.pdb' as PDB
+  [secstruct SECSTRUCT out secstruct.dat]
+    SECSTRUCT: Calculating secondary structure using mask [*]
+	Dumping results to secstruct.dat
+	Sum results to secstruct.dat.sum
+	SS data for each residue will be stored as integers.
+		0 = None
+		1 = Para
+		2 = Anti
+		3 = 3-10
+		4 = Alpha
+		5 = Pi
+		6 = Turn
+		7 = Bend
+	Backbone Atom Names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+# Citation: Kabsch, W.; Sander, C.; "Dictionary of Protein Secondary Structure:
+#           Pattern Recognition of Hydrogen-Bonded and Geometrical Features."
+#           Biopolymers (1983), V.22, pp.2577-2637.
+  [run]
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: prot1_HMR.parm7, 343 atoms, 21 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (2 total):
+ 0: 'prot1_md1.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 20000 of 20000)
+ 1: 'prot1_md2.nc' is a NetCDF AMBER trajectory, Parm prot1_HMR.parm7 (reading 40000 of 40000)
+  Coordinate processing will occur on 60000 frames.
+
+REFERENCE FRAMES (1 total):
+    0: prot1_HMR.rst7:1
+	Active reference frame for distance-based masks is 'default_name'
+
+OUTPUT TRAJECTORIES (2 total):
+  'prot1_md_centered.nc' (60000 frames) is a NetCDF AMBER trajectory
+  'prot1_md_centered.pdb' (60000 frames) is a PDB file: Writing frames 1
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTION SETUP FOR PARM 'prot1_HMR.parm7' (3 actions):
+  0: [center :1-21 mass origin]
+	Mask [:1-21] corresponds to 343 atoms.
+  1: [rms reference out rmsd_to_ini.dat '(@CA,C,N,O)']
+	Target mask: [(@CA,C,N,O)](79)
+	Reference mask: [(@CA,C,N,O)](79)
+  2: [secstruct SECSTRUCT out secstruct.dat]
+Warning: Not all BB atoms found for 2 residues: ACE:1 NHE:21
+Info: This is expected for Proline and terminal/non-standard residues.
+Info: Expected BB atom names: N=[N   ]  H=[H   ]  C=[C   ]  O=[O   ]  CA=[CA  ]
+Info: Re-run with action debug level >= 1 to see which residues are missing atoms.
+	Mask [*] corresponds to 21 residues.
+----- prot1_md1.nc (1-20000, 1) -----
+ 0% 10% 20% 30% 

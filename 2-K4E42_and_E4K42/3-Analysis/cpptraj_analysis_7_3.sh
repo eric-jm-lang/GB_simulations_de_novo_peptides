@@ -1,11 +1,11 @@
 #!/bin/bash
 
 for i in 7; do
-  for j in ff14SB ff03.r1 fb15 ff99SBnmr ff96 ff94 ff15ipq ff98; do 
+  for j in ff14SB ff03.r1 ff99SBnmr ff94 ff98; do 
   # for j in ff14SB; do
 	for k in E4K42 K4E42; do
   
-  cd ../4-Run2/igb${i}_${j}_${k}
+  cd ../2-Run1/igb${i}_${j}_${k}
   rm *.dat
   cat > traj.in <<EOF
 parm prot1_HMR.parm7
